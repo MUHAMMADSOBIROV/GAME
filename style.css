@@ -1,0 +1,194 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+    padding: 20px;
+    color: #fff;
+}
+
+.game-container {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 22px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+    max-width: 460px;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    font-size: 1.9rem;
+    margin-bottom: 14px;
+    background: linear-gradient(90deg, #ffd93b, #ff6b6b, #ffd93b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 2px;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.stat-box {
+    flex: 1;
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 10px;
+    padding: 9px;
+    text-align: center;
+    border: 1px solid rgba(255, 217, 59, 0.3);
+}
+
+.stat-box .label {
+    display: block;
+    font-size: 0.72rem;
+    color: #b0b0b0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.stat-box .value {
+    display: block;
+    font-size: 1.35rem;
+    font-weight: bold;
+    color: #ffd93b;
+    margin-top: 2px;
+}
+
+.canvas-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    aspect-ratio: 400 / 600;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 2px solid rgba(255, 217, 59, 0.35);
+    box-shadow: 0 0 25px rgba(255, 217, 59, 0.2) inset;
+    background: #0f1c2e;
+}
+
+#gameCanvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 18, 32, 0.92);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    text-align: center;
+    padding: 22px;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+}
+
+.overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.overlay h2 {
+    font-size: 1.6rem;
+    color: #ffd93b;
+    text-shadow: 0 0 15px rgba(255, 217, 59, 0.6);
+}
+
+.overlay p {
+    color: #c8c8c8;
+    font-size: 0.95rem;
+    max-width: 260px;
+    line-height: 1.5;
+}
+
+#startBtn {
+    background: linear-gradient(135deg, #ffd93b, #ff9d2e);
+    color: #1a1a1a;
+    border: none;
+    padding: 12px 40px;
+    font-size: 1.05rem;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 0 22px rgba(255, 217, 59, 0.5);
+}
+
+#startBtn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(255, 217, 59, 0.8);
+}
+
+#startBtn:active {
+    transform: scale(0.97);
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+    margin-top: 14px;
+    flex-wrap: wrap;
+}
+
+.ctrl-btn {
+    flex: 1;
+    min-width: 90px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+}
+
+.ctrl-btn:hover {
+    background: rgba(255, 217, 59, 0.15);
+    border-color: #ffd93b;
+    color: #ffd93b;
+}
+
+.ctrl-btn.danger:hover {
+    background: rgba(255, 80, 80, 0.15);
+    border-color: #ff5050;
+    color: #ff5050;
+}
+
+.ctrl-btn.muted {
+    color: #888;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.instructions {
+    text-align: center;
+    margin-top: 14px;
+    font-size: 0.85rem;
+    color: #999;
+    line-height: 1.5;
+}
+
+.instructions strong {
+    color: #ffd93b;
+}
